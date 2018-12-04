@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>智麦鲜啤</title>
+    <style>
+ /* Animation properties */
+.whigest {
+    /* animation-delay:1s; */
+    /* -webkit-animation-delay:1s; */
+  animation: whigest 5s ease-out infinite;
+}
+.zhimai {
+    /* animation-delay:1s; */
+    /* -webkit-animation-delay:1s; */
+  animation: zhimai 5s ease-out infinite;
+}
+
+/* Keyframes */
+@keyframes whigest {
+  0% {
+    opacity: 0;
+    /* transform: scale(.5); */
+    transform: scale(.5) translateX(-1000em);
+  }
+  20% {
+    opacity: .5;
+    /* transform: scale(1) translateY(-0.25em) translateX(0em); */
+    transform: scale(1) translateY(-0.25em) translateX(0em);
+  }
+  50% {
+    opacity: 1;
+  }
+  89% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2.5) translateY(-0.75em) translateX(0em);
+  }
+}
+
+@keyframes zhimai {
+  0% {
+    opacity: 0;
+    transform: scale(.5) translateY(-0.5em) translateX(1000em);
+  }
+  20% {
+    opacity: .5;
+    /* transform: scale(1) translateY(-0.25em) translateX(0em); */
+    transform: scale(1) translateY(-0.25em) translateX(0em);
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 0;
+    transform: translateZ(-1000em);
+    transform: scale(2.5) translateY(0.5em) translateX(0em);
+  }
+}
+
+img {
+  width: 100%;
+}
+
+.whigest, .zhimai, .byline {
+  position: absolute;
+}
+
+.whigest {
+  top: -0.75em;
+}
+
+.zhimai {
+  bottom: -0.5em;
+}
+
+    .whigest-container{
+        background-color: greenyellow;
+        width: 300px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        /* border: 5px solid #000; */
+        animation-delay:2s;
+        -webkit-animation-delay:2s; /* Safari 和 Chrome */
+        animation: fadeIn 5s ease-out infinite;
+
+        color: #fff;
+        font-size: 14px;
+        border-radius: 0.5em;
+        padding: 0 1em;
+        position: relative;
+        line-height: 32px;
+    }
+
+    @keyframes fadeIn {
+        0%, 100% {
+            /* border: 5px solid #fff; */
+            background-color: #fff;
+            /* opacity: 0; */
+        }
+
+        50% {
+            /* border: 5px solid #000; */
+            background-color: greenyellow;
+            /* opacity: 1; */
+        }
+    }
+
+    .whigest-container:before,
+    .whigest-container:after{
+        content: " ";
+        display: block;
+        position: absolute;
+        width:335px;
+        height:110px;
+        top: -5px;
+        left: -5px;
+        border:5px solid #000;
+        border-radius: 0.5em;
+        padding: 0 1em;
+        z-index:10;
+        box-sizing: border-box;
+        -webkit-animation: clipAni 5s infinite linear;
+    }
+
+    @keyframes  clipAni{
+        0%, 100% {
+            opacity: 0;
+            clip: rect(0px, 335px, 2px, 0px);
+        }
+        25% {
+            opacity: .5;
+            clip: rect(0px, 335px, 110px, 333px);
+        }
+        50% {
+            opacity: 1;
+            clip: rect(108px, 335px, 110px, 0px);
+        }
+        75% {
+            opacity: .5;
+            clip: rect(0px, 2px, 110px, 0px);
+        }          
+    }
+
+    /* .whigest-container::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        bottom: -50%;
+        left: -50%;
+        background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0));
+        transform: rotateZ(60deg) translate(-5em, 7.5em);
+        animation: sheen 1s infinite linear;
+    } */
+
+    .whigest-bg {
+        z-index: 1;
+        position: relative;
+        width: 150px;
+        height: 86.6px;
+        margin: 50px auto;
+        /* background-color: #000; */
+        animation: fadeInBlack 5s ease-out infinite;
+    }
+
+    @keyframes fadeInBlack {
+        0% {
+            top: -50px;
+            background-color: #fff;
+        }
+
+        20% {
+            top: 0;
+        }
+
+        50% {
+            background-color: #000;
+        }
+
+        100% {
+            background-color: #000;
+        }
+    }
+    .whigest-bg img{
+        z-index: 2;
+    }
+    @keyframes fadeInBorderRightBlack {
+        0% {
+            border-right: 43px solid #fff;
+            border-color: transparent #fff transparent transparent;
+        }
+
+        50% {
+            border-right: 43px solid #000;
+            border-color: transparent #000 transparent transparent;
+        }
+
+        100% {
+            border-right: 43px solid #000;
+            border-color: transparent #000 transparent transparent;
+        }
+    }
+    @keyframes fadeInBorderLeftBlack {
+        0% {
+            border-left: 43px solid #fff;
+            border-color: transparent transparent transparent #fff;
+        }
+
+        50% {
+            border-left: 43px solid #000;
+            border-color: transparent transparent transparent #000;
+        }
+
+        100% {
+            border-left: 43px solid #000;
+            border-color: transparent transparent transparent #000;
+        }
+    }
+    .whigest-bg:before {
+        z-index: 1;
+        content: '';
+        display: block;
+        position: absolute;
+        width: 0;
+        height: 0;
+        right:150px;
+        border-top: 36px solid transparent;
+        border-bottom: 50px solid transparent;
+        border-right: 43px solid #000;
+        /* border-width: 43.3px 25px; */
+        border-style: solid;
+        animation: fadeInBorderRightBlack 5s ease-out infinite;
+        border-color: transparent #000 transparent transparent;
+    }
+    .whigest-bg:after {
+        z-index: 1;
+        content: '';
+        display: block;
+        position: absolute;
+        width: 0;
+        height: 0;
+        left:150px;
+        border-top: 36px solid transparent;
+        border-bottom: 50px solid transparent;
+        border-left: 43px solid #000;
+        /* border-width: 43.3px 25px; */
+        border-style: solid;
+        animation: fadeInBorderLeftBlack 5s ease-out infinite;
+        border-color: transparent transparent transparent #000;
+        top:0;
+    }
+</style>
+</head>
+<body>
+    <div class="whigest-container">
+        <div class="whigest-bg">
+            <img src="./imgs/whigest.svg" alt="whigest" class="whigest">
+            <img src="./imgs/zhimai.svg" alt="zhimai" class="zhimai">
+        </div>
+    </div>
+</body>
+</html>
