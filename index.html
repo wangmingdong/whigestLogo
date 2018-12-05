@@ -176,11 +176,13 @@ img {
 
     @keyframes fadeInBlack {
         0% {
-            top: -50px;
+            /* top: -50px; */
+            transform: scale(.7);
             background-color: #fff;
         }
 
         20% {
+            transform: scale(1);
             top: 0;
         }
 
@@ -189,14 +191,15 @@ img {
         }
 
         100% {
-            background-color: #000;
+            /* background-color: #000; */
+            background-color: #fff;
         }
     }
     .whigest-bg img{
         z-index: 2;
     }
     @keyframes fadeInBorderRightBlack {
-        0% {
+        0%, 100% {
             border-right: 43px solid #fff;
             border-color: transparent #fff transparent transparent;
         }
@@ -206,13 +209,13 @@ img {
             border-color: transparent #000 transparent transparent;
         }
 
-        100% {
+        /* 100% {
             border-right: 43px solid #000;
             border-color: transparent #000 transparent transparent;
-        }
+        } */
     }
     @keyframes fadeInBorderLeftBlack {
-        0% {
+        0%, 100% {
             border-left: 43px solid #fff;
             border-color: transparent transparent transparent #fff;
         }
@@ -222,10 +225,10 @@ img {
             border-color: transparent transparent transparent #000;
         }
 
-        100% {
+        /* 100% {
             border-left: 43px solid #000;
             border-color: transparent transparent transparent #000;
-        }
+        } */
     }
     .whigest-bg:before {
         z-index: 1;
